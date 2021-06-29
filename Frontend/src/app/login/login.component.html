@@ -1,0 +1,37 @@
+      
+      
+      <div class="container-fluid my-5" style=" height: 450px;width: 100%;">
+        <!-- <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;text-align: center;">Administrator's Login</h1> -->
+        <h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Please Log In, or <a href="/signUp">Sign Up</a></h3>
+         <div class="row">   
+             <div class="col-4">  
+             </div>
+            <div class="col-5">    
+        <form role="form" #loginform="ngForm" (ngSubmit)="loginUser()">
+          <div class="form-group">
+            <label for="userName">Username</label>
+            <input type="text" class="form-control" id="Name" name="username" [(ngModel)]="user.username" (focus))="clearText()" required>
+            <label style="color: crimson;" name="error" [(ngModel)]="error">{{error}}</label>
+            
+            </div>
+          <div class="form-group">
+            
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" id="inputPassword" name="password" [(ngModel)]="user.password"  required>
+            <label id="passwordErrorlbl" style="color: red;" name="passwordErrorlbl" [(ngModel)]="passwordError">{{passwordError}}</label>
+
+          </div>
+         
+          <button type="submit" id="loginbtn" [disabled]=loginform.form.invalid class="btn btn btn-primary">
+            Log In
+          </button>
+        </form>
+        </div>
+        <div class="col-3"></div>
+         
+        </div>
+    </div> 
+  
+     
+    
+  

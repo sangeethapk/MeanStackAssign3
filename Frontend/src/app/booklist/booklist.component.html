@@ -1,0 +1,62 @@
+<!-- <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Book Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Genre</th>
+        <th scope="col">More Details</th>
+        
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td colspan="2">Larry the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table> -->
+  
+    <div class="row my-5" *ngFor="let book of books">    
+      <br>
+      <div class="col-md-3 col-sm-3 text-center">
+        <!-- <a class="story-title" href="#"><img alt="title" src="/images/"+{{book.image}} style="width:140px;height:140px" class="img-circle"></a> -->
+        <img   src = {{book.image}}  style="width:140px;height:140px" class="mx-2 gap-3"   >
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <h2 class="titlestyle">{{book.title}}</h2>
+        <div class="row">
+          <div class="col-xs-9">
+            <h3 ><span class="label label-default"  class="heading">Author: </span>{{book.author}}</h3>
+            
+            <h4><span class="label label-default"  class="heading">Genre : </span>{{book.genre}} </h4>
+              <a class="text-muted" class="heading"  (click)='getDetails(book.title)'>Read More</a>
+          </div>
+         
+        </div>
+        <br><br>
+      </div>
+      <div class="col-md-3 col-sm-2">
+        <button type="button" class="btn btn-danger m-2" *ngIf="_auth.loggedIn()" (click)='deleteBook(book)'>Delete</button>
+        <button type="button" class="btn btn-warning"*ngIf="_auth.loggedIn()" (click)='updateBook(book)'>Update</button>
+        
+      </div>
+      <hr>
+    </div>
+    
+   

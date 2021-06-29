@@ -1,0 +1,23 @@
+ 
+ <header nav class="navbar navbar-expand-lg  navbar-dark bg-dark " *ngIf="nav.visible">
+  
+    <div class="container-fluid">
+      <a class="navbar-brand" *ngIf="!_auth.loggedIn()" href="#">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+              
+         
+          <button class="radius"> <a class="nav-link" class="linkcolor"  routerLink="/booklist">Books</a></button>
+          <button class="radius"><a class="nav-link" class="linkcolor"  routerLink="/authorlist">Authors</a></button>
+          <button class="radius"><a class="nav-link" class="linkcolor" *ngIf="_auth.loggedIn()"  routerLink="/addbook">Add Book</a></button>
+          <button class="radius"><a class="nav-link" class="linkcolor" *ngIf="_auth.loggedIn()"  routerLink="/addauthor">Add Author</a></button>
+          <button class="radius"><a class="nav-link" class="linkcolor"  (click)="logOut()">Log Out</a></button>
+          
+        </div>
+      </div>
+    </div>
+ </header>
+  

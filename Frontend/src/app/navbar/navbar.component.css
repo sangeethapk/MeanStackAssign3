@@ -1,0 +1,17 @@
+.radius{
+    border-radius: 12px;
+    text-decoration: gold;
+    background: #000;
+    border-style: solid;
+    margin-left: 5px;
+    min-width: 90px;
+    max-width: 110px;
+   
+}
+.linkcolor{
+    color: burlywood;
+    text-decoration: none;
+    font-size: medium;
+    font-weight: bold;
+    
+}
