@@ -22,7 +22,7 @@ export class BookServiceService {
 
   addBookToDB(book:any){
 
-    return this.http.post("http://localhost:3000/insert",{"book":book})
+    return this.http.post("/api/insert",{"book":book})
     .subscribe(data =>{
       console.log(data+"add service")
     })
@@ -36,26 +36,26 @@ export class BookServiceService {
   getBooks(){
 
    
-      return this.http.get("http://localhost:3000/booklist");
+      return this.http.get("/api/booklist");
     
   
   }
   getBookDetails(title:any){
 
       console.log(title);
-      return this.http.get("http://localhost:3000/bookdetails/"+title);
+      return this.http.get("/api/bookdetails/"+title);
 
 
   }
 
   deleteBook(title:any){
-    return this.http.delete("http://localhost:3000/remove/"+title);
+    return this.http.delete("/api/remove/"+title);
 
   }
   updateBook(book:any){
     console.log("inside update service"+book);
     const oldtitle=localStorage.getItem("updatetitle");
-    return this.http.put("http://localhost:3000/update/"+oldtitle,book)
+    return this.http.put("/api/update/"+oldtitle,book)
    .subscribe(data =>{console.log(data)})
 
     

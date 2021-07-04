@@ -6,12 +6,15 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
+  server_address:string="/api";
+ // server_address:string="http://localhost:3000/login";
+
   constructor(private http:HttpClient) { }
 
 
   authenticateLogin(user:any){
 
-    return this.http.post<any>("http://localhost:3000/login",user);//we are not handling result from here
+    return this.http.post<any>(this.server_address+"/login",user);//we are not handling result from here
 
   }
   loggedIn(){
@@ -26,6 +29,6 @@ export class AuthService {
   }
 
   addNewMember(member:any){
-    return this.http.post<any>("http://localhost:3000/signup",member);
+    return this.http.post<any>(this.server_address+"/signup",member);
   }
 }
